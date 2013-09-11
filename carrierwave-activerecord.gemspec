@@ -17,8 +17,8 @@ Gem::Specification.new do |gem|
   gem.version       = CarrierWave::Storage::ActiveRecord::VERSION
 
   # usage dependencies
-  gem.add_dependency "carrierwave", "~> 0.6.2"
-  gem.add_dependency "activerecord", "~> 3.2.2"
+  gem.add_dependency "carrierwave", "~> 0.9.0"
+  gem.add_dependency "activerecord", "> 3.2.2"
 
   # required development dependencies
   gem.add_development_dependency "cucumber", "~> 1.2.1"

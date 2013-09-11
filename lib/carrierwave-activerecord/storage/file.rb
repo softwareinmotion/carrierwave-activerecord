@@ -2,7 +2,7 @@
 
 module CarrierWave
   module Storage
-    module ActiveRecord 
+    module ActiveRecord
       class File < ::ActiveRecord::Base
 
         # TODO: Duck-type CarrierWave::SanitizedFile, therefore need methods:
@@ -17,14 +17,6 @@ module CarrierWave
 
         # TODO: Change this at runtime using a configuration setting.
         self.table_name = 'carrier_wave_files'
-
-        attr_accessible :original_filename,
-                        :content_type,
-                        :extension,
-                        :filename,
-                        :size,
-                        :data,
-                        :storage_path
 
         # Remove the file from service.
         alias_method :delete, :destroy
@@ -42,17 +34,6 @@ module CarrierWave
           'CarrierWave::Storage::ActiveRecord::File#exists? FIXME!'
         end
 
-        # Return all attributes from file.
-        def attributes
-          # TODO: What attributes should be returned?
-          # The Fog storage engine returns attributes from the Fog file. ?
-          # 'key'            - Key for the object
-          # 'Content-Length' - Size of object contents
-          # 'Content-Type'   - MIME type of object
-          # 'ETag'           - Etag of object
-          # 'Last-Modified'  - Last modified timestamp for object
-          'CarrierWave::Storage::ActiveRecord::File#attributes FIXME!'
-        end
       end # File
     end # ActiveRecord
   end # Storage

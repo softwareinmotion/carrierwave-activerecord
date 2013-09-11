@@ -2,8 +2,8 @@
 
 module CarrierWave
   module Storage
-    module ActiveRecord 
-      class FileProxy 
+    module ActiveRecord
+      class FileProxy
         attr_reader :file
 
         def initialize(file)
@@ -24,7 +24,7 @@ module CarrierWave
         end
 
         def self.fetch!(identifier)
-          file_record = File.find_by_storage_path(identifier)
+          file_record = File.where(storage_path: identifier).first
           self.new(file_record)
         end
 
